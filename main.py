@@ -1,4 +1,5 @@
 #hangman
+import random
 import collections 
 def notwon():
   if collections.Counter(alist) == collections.Counter(newlist):
@@ -14,16 +15,18 @@ def checkinput(x):
 
 # store the answer in a list 
 alist = []
-word = "TEE"
+auto = ["earth","tesla","apple","python","paper","computer"]
+word = random.choice(auto)
+word = word.upper()
 for x in word:
   alist.append(x)
-print(alist) #testing 
+#print(alist) #testing 
 
 # creating a empty list with _ with same lenth   
 newlist = []
 for i in range(0,(len(word))):
   newlist.append("_")
-print(newlist) #testing 
+#print(newlist) #testing 
 
 counter = 0
 while (counter < 5 and notwon()):
